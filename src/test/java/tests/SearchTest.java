@@ -1,6 +1,6 @@
 package tests;
 
-import keywords.Account;
+import keywords.LogIn;
 import keywords.Search;
 import org.junit.After;
 import org.junit.Assert;
@@ -25,7 +25,7 @@ public class SearchTest {
 
   @Test
   public void searchTest() {
-    Account.logIn(driver, url, email, password);
+    LogIn.logIn(driver, url, email, password);
     Search.search(driver, searchInput, searchValue);
     Assert.assertEquals("Search category:", Search.getSearchProof(driver));
   }

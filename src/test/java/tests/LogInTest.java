@@ -1,6 +1,6 @@
 package tests;
 
-import keywords.Account;
+import keywords.LogIn;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,8 +19,8 @@ public class LogInTest {
 
   @Test
   public void logInTest() {
-    Account.logIn(driver, url, email, password);
-    Assert.assertEquals("Róbert", Account.getUserName(driver));
+    LogIn.logIn(driver, url, email, password);
+    Assert.assertEquals("Róbert", LogIn.getUserName(driver));
   }
 
   @After

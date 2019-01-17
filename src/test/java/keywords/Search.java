@@ -16,7 +16,7 @@ public class Search {
   private static WebElement searchProof;
 
   public static void search(WebDriver driver, String input, String searchValue) {
-    waitDriver = new WebDriverWait(driver, Account.WAIT_TIMEOUT);
+    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
     waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.id("navbar-query")));
     driver.findElement(By.id("navbar-query")).sendKeys(input);
     quickSearchDropDown = driver.findElement(By.id("quicksearch"));
@@ -26,7 +26,7 @@ public class Search {
   }
 
   public static String getSearchProof(WebDriver driver) {
-    waitDriver = new WebDriverWait(driver, Account.WAIT_TIMEOUT);
+    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
     searchProof = waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.id("findSubHeaderLabel")));
     return searchProof.getText();
   }
