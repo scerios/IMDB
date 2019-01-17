@@ -12,17 +12,25 @@ public class Search {
   private static WebDriverWait waitDriver;
   private static Select quickSearch;
 
+  private static WebElement searchBar;
   private static WebElement quickSearchDropDown;
   private static WebElement searchProof;
+  private static WebElement submit;
 
   public static void search(WebDriver driver, String input, String searchValue) {
     waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
     waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.id("navbar-query")));
-    driver.findElement(By.id("navbar-query")).sendKeys(input);
+
+    searchBar = driver.findElement(By.id("navbar-query"));
+    searchBar.sendKeys(input);
+    waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.id("navbar-suggestionsearch")));
+
     quickSearchDropDown = driver.findElement(By.id("quicksearch"));
     quickSearch = new Select(quickSearchDropDown);
     quickSearch.selectByValue(searchValue);
-    driver.findElement(By.id("navbar-submit-button")).click();
+
+    submit = driver.findElement(By.id("navbar-submit-button"));
+    submit.click();
   }
 
   public static String getSearchProof(WebDriver driver) {
