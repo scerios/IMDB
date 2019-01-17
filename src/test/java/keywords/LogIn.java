@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LogIn {
-  public static final int WAIT_TIMEOUT = 5;
+  public static final int WAIT_TIMEOUT = 10;
   private static WebDriverWait waitDriver;
 
   private static WebElement logInUser;
