@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WatchList {
+  public static long sumOfMoviesAdded = 0;
   private static WebDriverWait waitDriver;
 
   private static WebElement button;
@@ -25,6 +26,7 @@ public class WatchList {
 
     button = driver.findElement(By.className("ribbonize"));
     if (added == null) {
+      setSumOfMoviesAdded();
       button.click();
     }
   }
@@ -35,5 +37,9 @@ public class WatchList {
 
     button = driver.findElement(By.linkText("Watchlist"));
     button.click();
+  }
+
+  public static void setSumOfMoviesAdded() {
+    sumOfMoviesAdded++;
   }
 }
