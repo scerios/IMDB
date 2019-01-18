@@ -18,4 +18,12 @@ public class WatchList {
     button = driver.findElement(By.className("ribbonize"));
     button.click();
   }
+
+  public static void getWatchlistPage(WebDriver driver) {
+    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Watchlist")));
+
+    button = driver.findElement(By.linkText("Watchlist"));
+    button.click();
+  }
 }
