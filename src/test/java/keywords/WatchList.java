@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WatchList {
-  public static long sumOfMoviesAdded = 0;
+  private static long sumOfMoviesAdded = 1;
+  private static String convertedSum;
   private static WebDriverWait waitDriver;
 
   private static WebElement button;
@@ -39,7 +40,19 @@ public class WatchList {
     button.click();
   }
 
-  public static void setSumOfMoviesAdded() {
+  private static void setSumOfMoviesAdded() {
     sumOfMoviesAdded++;
+  }
+
+  public static String convertSumOfMoviesAddedToString() {
+    return convertedSum = String.valueOf(sumOfMoviesAdded);
+  }
+
+  public static String getActualSumOfMoviesAdded(WebDriver driver) {
+    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver.until(ExpectedConditions.elementToBeClickable(By.className("count")));
+
+    button = driver.findElement(By.className("count"));
+    return button.getText();
   }
 }
