@@ -16,6 +16,7 @@ public class Search {
   private static WebElement quickSearchDropDown;
   private static WebElement searchProof;
   private static WebElement submit;
+  private static WebElement searchResult;
 
   public static void search(WebDriver driver, String input, String searchValue) {
     waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
@@ -33,9 +34,21 @@ public class Search {
     submit.click();
   }
 
+  public static void selectSearchResult(WebDriver driver, String input) {
+    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.linkText(input)));
+
+    searchResult = driver.findElement(By.linkText(input));
+    if (searchResult.getText().toLowerCase().equals(input.toLowerCase())) {
+      searchResult.click();
+    }
+  }
+
   public static String getSearchProof(WebDriver driver) {
     waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
     searchProof = waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.id("findSubHeaderLabel")));
     return searchProof.getText();
   }
+
+
 }
