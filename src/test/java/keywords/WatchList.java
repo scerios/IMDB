@@ -16,7 +16,7 @@ public class WatchList {
   private static WebElement added;
 
   public static void addToWatchlist(WebDriver driver) {
-    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver = new WebDriverWait(driver, Log.WAIT_TIMEOUT);
     waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.className("ribbonize")));
 
     try {
@@ -33,7 +33,7 @@ public class WatchList {
   }
 
   public static void getWatchlistPage(WebDriver driver) {
-    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver = new WebDriverWait(driver, Log.WAIT_TIMEOUT);
     waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Watchlist")));
 
     button = driver.findElement(By.linkText("Watchlist"));
@@ -49,7 +49,7 @@ public class WatchList {
   }
 
   public static String getActualSumOfMoviesAdded(WebDriver driver) {
-    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver = new WebDriverWait(driver, Log.WAIT_TIMEOUT);
     waitDriver.until(ExpectedConditions.elementToBeClickable(By.className("count")));
 
     button = driver.findElement(By.className("count"));

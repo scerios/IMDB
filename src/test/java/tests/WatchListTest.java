@@ -1,6 +1,6 @@
 package tests;
 
-import keywords.LogIn;
+import keywords.Log;
 import keywords.WatchList;
 import org.junit.After;
 import org.junit.Assert;
@@ -20,7 +20,7 @@ public class WatchListTest {
   public void setUp() {
     System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
     driver = new FirefoxDriver();
-    LogIn.logIn(driver, url, email, password);
+    Log.logIn(driver, url, email, password);
   }
 
   @Test

@@ -12,7 +12,7 @@ public class RecentView {
   private static WebElement activityButton;
 
   public static void getActivityPage(WebDriver driver) {
-    waitDriver = new WebDriverWait(driver, LogIn.WAIT_TIMEOUT);
+    waitDriver = new WebDriverWait(driver, Log.WAIT_TIMEOUT);
     waitDriver.until(ExpectedConditions.presenceOfElementLocated(By.id("nbusername")));
     activityButton = driver.findElement(By.id("nbusername"));
     activityButton.click();

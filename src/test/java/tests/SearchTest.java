@@ -1,7 +1,7 @@
 package tests;
 
 import keywords.SearchValue;
-import keywords.LogIn;
+import keywords.Log;
 import keywords.Search;
 import org.junit.After;
 import org.junit.Assert;
@@ -21,7 +21,7 @@ public class SearchTest {
   public void setUp() {
     System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
     driver = new FirefoxDriver();
-    LogIn.logIn(driver, url, email, password);
+    Log.logIn(driver, url, email, password);
   }
 
   @Test
