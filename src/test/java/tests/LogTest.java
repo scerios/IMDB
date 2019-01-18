@@ -15,12 +15,19 @@ public class LogInTest {
   public void setUp() {
     System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
     driver = new FirefoxDriver();
+    LogIn.logIn(driver, url, email, password);
   }
 
+//  @Test
+//  public void logInTest() {
+//    LogIn.logIn(driver, url, email, password);
+//    Assert.assertEquals("Róbert", LogIn.getUserName(driver));
+//  }
+
   @Test
-  public void logInTest() {
-    LogIn.logIn(driver, url, email, password);
-    Assert.assertEquals("Róbert", LogIn.getUserName(driver));
+  public void logOutTest() {
+    LogIn.logOut(driver);
+    Assert.assertEquals("Sign in", LogIn.logOutProof(driver));
   }
 
   @After
