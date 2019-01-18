@@ -1,7 +1,9 @@
 package tests;
 
 import keywords.LogIn;
+import keywords.WatchList;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +25,8 @@ public class WatchListTest {
 
   @Test
   public void isMovieAdded() {
-
+    WatchList.getWatchlistPage(driver);
+    Assert.assertEquals("(" + WatchList.convertSumOfMoviesAddedToString() + ")", WatchList.getActualSumOfMoviesAdded(driver));
   }
 
   @After
