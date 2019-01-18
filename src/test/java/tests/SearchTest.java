@@ -1,5 +1,6 @@
 package tests;
 
+import keywords.SearchValue;
 import keywords.LogIn;
 import keywords.Search;
 import org.junit.After;
@@ -14,19 +15,19 @@ public class SearchTest {
   private String email = "89.t.robert@gmail.com";
   private String password = "lFCTJJT0";
   private String url = "https://www.imdb.com";
-  private String searchInput = "Far From Home";
-  private String searchValue = "tt";
+  private String searchInput = "Spider-Man: Far From Home";
 
   @Before
   public void setUp() {
     System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
     driver = new FirefoxDriver();
+    LogIn.logIn(driver, url, email, password);
   }
 
   @Test
   public void searchTest() {
-    LogIn.logIn(driver, url, email, password);
-    Search.search(driver, searchInput, searchValue);
+    Search.search(driver, searchInput, SearchValue.ALL.toString().toLowerCase());
+    Search.selectSearchResult(driver, searchInput);
     Assert.assertEquals("Search category:", Search.getSearchProof(driver));
   }
 
