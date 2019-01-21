@@ -7,8 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LogTest {
   private WebDriver driver;
-  private String email = "89.t.robert@gmail.com";
-  private String password = "lFCTJJT0";
+  private String email = System.getenv("email");
+  private String password = System.getenv("password");
   private String url = "https://www.imdb.com";
 
   @Before
