@@ -1,8 +1,8 @@
 version: 2.1
-  jobs:
-    build:
-      docker:
-        - image: circleci/node:4.8.2
-      steps:
-        - checkout
-        run: echo "my first hello"
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      run: echo "my first hello"
