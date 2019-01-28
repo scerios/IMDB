@@ -3,6 +3,5 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-    steps:
-      - checkout
+    steps: - checkout
       run: echo "my first hello"
