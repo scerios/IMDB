@@ -5,4 +5,4 @@ version: 2.1
         - image: circleci/node:4.8.2
       steps:
         - checkout
-        run: echo '
+        run: echo "my first hello"
