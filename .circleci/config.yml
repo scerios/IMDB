@@ -5,4 +5,5 @@ jobs:
       - image: circleci/openjdk:8-jdk
     steps:
     - checkout
-    run: echo "First Hello World"
+      run: npm install
+      run: npm test
