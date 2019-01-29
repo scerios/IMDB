@@ -1,11 +1,14 @@
 package tests;
 
 import keywords.Log;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class LogTest {
+public class LogOutTest {
   private WebDriver driver;
   private String email = System.getenv("email");
   private String password = System.getenv("password");
@@ -15,22 +18,17 @@ public class LogTest {
   public void setUp() {
     System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
     driver = new FirefoxDriver();
+    Log.logIn(driver, url, email, password);
   }
 
-  @Test
-  public void logInTest() {
-    Log.logIn(driver, url, email, password);
-    Assert.assertEquals("Róbert", Log.getUserName(driver));
+  @After
+  public void close() {
+    driver.quit();
   }
 
   @Test
   public void logOutTest() {
     Log.logOut(driver);
     Assert.assertEquals("Sign in", Log.logOutProof(driver));
-  }
-
-  @After
-  public void close() {
-    driver.quit();
   }
 }
