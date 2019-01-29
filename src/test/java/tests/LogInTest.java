@@ -5,6 +5,7 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
 public class LogInTest {
   private WebDriver driver;
   private String email = System.getenv("email");
