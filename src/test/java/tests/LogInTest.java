@@ -3,6 +3,7 @@ package tests;
 import keywords.Log;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
@@ -14,8 +15,8 @@ public class LogInTest {
 
   @Before
   public void setUp() {
-    System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
-    driver = new FirefoxDriver();
+    System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+    driver = new ChromeDriver();
   }
 
   @Test

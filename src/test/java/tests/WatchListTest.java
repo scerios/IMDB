@@ -19,7 +19,7 @@ public class WatchListTest {
 
   @Before
   public void setUp() {
-    System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.exe");
+    System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
     driver = new ChromeDriver();
     Log.logIn(driver, url, email, password);
   }
