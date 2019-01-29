@@ -1,12 +1,12 @@
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.xml
 *.ipr
 *.jar
 *.exe
-/out/
+
 
 ### Maven ###
 log/
