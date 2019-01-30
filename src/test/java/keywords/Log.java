@@ -22,7 +22,6 @@ public class Log {
 
 
   public static void logIn(WebDriver driver, String url, String email, String password) {
-    System.setProperty("webdriver.gecko.driver", "C:\\Users\\Csirke\\Desktop\\Downloads\\Geckodriver\\geckodriver.");
     driver.manage().window().maximize();
     driver.get(url);
 
