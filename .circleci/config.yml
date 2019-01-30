@@ -2,14 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: lucacri/selenium-firefox
+      - image: rgielen/selenium-firefox-maven
     working_directory: ~/repo
     environment:
       MAVEN_OPTS: -Xmx3200m
     steps:
       - checkout
-      - run: mkdir test-reports
-      - run: yum install maven
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
