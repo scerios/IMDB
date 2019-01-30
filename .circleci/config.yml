@@ -8,5 +8,10 @@ jobs:
       MAVEN_OPTS: -Xmx3200m
     steps:
       - checkout
+      - dependencies:
+          post:
+            - mkdir drivers
+            - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz && tar -zxvf geckodriver-v0.11.1-linux64.tar.gz:
+                pwd: drivers
       - run: mvn dependency:go-offline
       - run: mvn integration-test
