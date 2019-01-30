@@ -1,5 +1,6 @@
 package tests;
 
+import configurations.ConfigImdb;
 import keywords.Log;
 import org.junit.After;
 import org.junit.Assert;
@@ -16,7 +17,7 @@ public class LogOutTest {
 
   @Before
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", ConfigImdb.driver);
     driver = new ChromeDriver();
     Log.logIn(driver, url, email, password);
   }

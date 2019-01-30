@@ -1,5 +1,6 @@
 package tests;
 
+import configurations.ConfigImdb;
 import keywords.Log;
 import keywords.WatchList;
 import org.junit.After;
@@ -18,7 +19,7 @@ public class WatchListTest {
 
   @Before
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", ConfigImdb.driver);
     driver = new ChromeDriver();
     Log.logIn(driver, url, email, password);
   }

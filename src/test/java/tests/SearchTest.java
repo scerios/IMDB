@@ -1,5 +1,6 @@
 package tests;
 
+import configurations.ConfigImdb;
 import keywords.SearchValue;
 import keywords.Log;
 import keywords.Search;
@@ -19,7 +20,7 @@ public class SearchTest {
 
   @Before
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", ConfigImdb.driver);
     driver = new ChromeDriver();
     Log.logIn(driver, url, email, password);
   }

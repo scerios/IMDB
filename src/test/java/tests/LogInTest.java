@@ -1,5 +1,6 @@
 package tests;
 
+import configurations.ConfigImdb;
 import keywords.Log;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
@@ -12,9 +13,10 @@ public class LogInTest {
   private String password = System.getenv("password");
   private String url = "https://www.imdb.com";
 
+
   @Before
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", ConfigImdb.driver);
     driver = new ChromeDriver();
   }
 
